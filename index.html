@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kolay Tarifler — Mutfak araçları, dönüşümler ve rehberler</title>
+<meta name="description" content="Kolay Tarifler: porsiyon ayarlayıcı, bardak-gram dönüştürücü, kalori hesaplayıcı, malzeme ikame bulucu ve alışveriş listeli yemek planlayıcı.">
+<meta name="theme-color" content="#134e4a">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+:root{--primary:#134e4a;--primary2:#0f766e;--primary-light:#99f6e4;--accent:#0d9488;--bg:#f0fdfa;--card:#fff;--text:#1c1917;--muted:#57534e;--border:#c4e8e0;--hero-sub:#ccfbf1;--result-bg:#ecfdf5;--result-border:#5eead4;--footer-link:#5eead4}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+.wrap{max-width:1060px;margin:0 auto;padding:0 16px}
+a{color:var(--accent)}
+header{background:var(--primary);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.header-in{display:flex;align-items:center;gap:14px;padding:13px 16px;max-width:1060px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;flex:1;min-width:200px}
+.brand .mark{width:38px;height:38px;border-radius:9px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:19px}
+.brand b{font-size:19px}.brand small{display:block;font-size:11.5px;color:var(--primary-light);font-weight:400}
+nav.main-nav{display:flex;gap:4px;flex-wrap:wrap}
+nav.main-nav a{color:#fff;text-decoration:none;padding:7px 11px;border-radius:8px;font-size:14.5px}
+nav.main-nav a:hover{background:rgba(255,255,255,.15)}
+.hero{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;padding:52px 0 46px;text-align:center}
+.hero h1{font-size:clamp(28px,5vw,42px);line-height:1.2;margin-bottom:10px}
+.hero p{font-size:17px;color:var(--hero-sub);max-width:640px;margin:0 auto}
+section{padding:38px 0 8px}
+h2{font-size:25px;margin-bottom:6px;color:var(--primary)}
+.sec-sub{color:var(--muted);margin-bottom:20px;max-width:720px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.tool{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.tool h3{font-size:18px;margin-bottom:4px;color:var(--primary)}
+.tool p.desc{font-size:14px;color:var(--muted);margin-bottom:14px}
+label{display:block;font-size:13.5px;font-weight:600;margin:10px 0 4px}
+input,select,textarea{width:100%;padding:9px 10px;border:1px solid var(--border);border-radius:8px;font-size:15px;background:#fff;color:var(--text)}
+input[type=number]{-moz-appearance:textfield}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.row3{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px}
+button.calc{background:var(--accent);color:#fff;border:none;padding:11px 18px;border-radius:9px;font-size:15px;font-weight:700;cursor:pointer;margin-top:14px;width:100%}
+button.calc:hover{filter:brightness(1.08)}
+.result{margin-top:14px;background:var(--result-bg);border:1px solid var(--result-border);border-radius:9px;padding:12px 14px;font-size:15px;display:none}
+.result.show{display:block}
+.result b{color:var(--primary)}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:14.5px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border)}
+th{background:var(--primary);color:#fff}
+tr:last-child td{border-bottom:none}
+.table-wrap{overflow-x:auto;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.guides-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.guide-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-decoration:none;color:var(--text);display:block;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.guide-card:hover{border-color:var(--accent)}
+.guide-card h3{font-size:17.5px;color:var(--primary);margin-bottom:6px}
+.guide-card p{font-size:14px;color:var(--muted)}
+.faq details{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.faq summary{font-weight:700;cursor:pointer;color:var(--primary);font-size:15.5px}
+.faq p{margin-top:8px;font-size:15px}
+footer{background:var(--primary);color:#e8e2d9;padding:34px 0 26px;margin-top:44px;font-size:14px}
+footer h4{color:#fff;margin-bottom:6px}
+footer p{margin-bottom:12px;max-width:760px}
+footer a{color:var(--footer-link)}
+.article{max-width:760px;margin:0 auto;padding:34px 16px}
+.article h1{font-size:30px;line-height:1.25;color:var(--primary);margin-bottom:10px}
+.article .lede{font-size:17.5px;color:var(--muted);margin-bottom:22px}
+.article h2{font-size:21px;margin:26px 0 8px}
+.article h3{font-size:17px;margin:20px 0 6px;color:var(--primary)}
+.article p{margin-bottom:12px}
+.article ul,.article ol{margin:0 0 14px 22px}
+.article li{margin-bottom:6px}
+.backlink{display:inline-block;margin-bottom:18px;font-weight:700;text-decoration:none}
+@media(max-width:640px){.row,.row3{grid-template-columns:1fr}.hero{padding:38px 0 32px}}
+</style>
+</head>
+<body>
+<header><div class="header-in"><a class="brand" href="index.html"><span class="mark">🍲</span><span><b>Kolay Tarifler</b><small>Her gün için kolay ve lezzetli tarifler</small></span></a><nav class="main-nav"><a href="#outils">Araçlar</a><a href="#tableau">Dönüşümler</a><a href="#guides">Rehberler</a><a href="#faq">SSS</a></nav></div></header>
+
+<div class="hero"><div class="wrap"><h1>Kolay Tarifler</h1><p>Her gün için kolay ve lezzetli tarifler</p></div></div>
+
+<section id="outils"><div class="wrap"><h2>Mutfak Araçları</h2><p class="sec-sub">Kayıt olmadan kullanabileceğiniz beş ücretsiz araç.</p>
+<div class="tools-grid">
+<div class="tool"><h3>Tarif Ölçekleyici</h3><p class="desc">Porsiyon sayısını değiştirin: miktarlar otomatik olarak yeniden hesaplanır.</p>
+<div class="row"><div><label>Orijinal porsiyon</label><input id="sc-from" type="number" value="4" min="1"></div><div><label>İstenen porsiyon</label><input id="sc-to" type="number" value="6" min="1"></div></div>
+<label>Malzemeler</label><div class="row3"><input id="sc-name1" value="Un" aria-label="Malzeme"><input id="sc-qty1" type="number" value="250" min="0" step="any" aria-label="Miktar"><select id="sc-unit1"><option value="g" selected>g</option><option value="ml">ml</option><option value="yemek kaşığı">yemek kaşığı</option><option value="çay kaşığı">çay kaşığı</option><option value="adet">adet</option><option value="su bardağı">su bardağı</option></select></div><div class="row3"><input id="sc-name2" value="Şeker" aria-label="Malzeme"><input id="sc-qty2" type="number" value="150" min="0" step="any" aria-label="Miktar"><select id="sc-unit2"><option value="g" selected>g</option><option value="ml">ml</option><option value="yemek kaşığı">yemek kaşığı</option><option value="çay kaşığı">çay kaşığı</option><option value="adet">adet</option><option value="su bardağı">su bardağı</option></select></div><div class="row3"><input id="sc-name3" value="Tereyağı" aria-label="Malzeme"><input id="sc-qty3" type="number" value="100" min="0" step="any" aria-label="Miktar"><select id="sc-unit3"><option value="g" selected>g</option><option value="ml">ml</option><option value="yemek kaşığı">yemek kaşığı</option><option value="çay kaşığı">çay kaşığı</option><option value="adet">adet</option><option value="su bardağı">su bardağı</option></select></div><div class="row3"><input id="sc-name4" value="Süt" aria-label="Malzeme"><input id="sc-qty4" type="number" value="200" min="0" step="any" aria-label="Miktar"><select id="sc-unit4"><option value="g">g</option><option value="ml" selected>ml</option><option value="yemek kaşığı">yemek kaşığı</option><option value="çay kaşığı">çay kaşığı</option><option value="adet">adet</option><option value="su bardağı">su bardağı</option></select></div>
+<button class="calc" id="calc-scale">Hesapla</button><div class="result" id="res-scale"></div></div>
+
+<div class="tool"><h3>Birim Dönüştürücü</h3><p class="desc">Su bardağını grama, gramı su bardağına ve °F'yi °C'ye çevirin.</p>
+<label>Malzeme</label><select id="cv-ing"><option value="flour" selected>Un</option><option value="sugar">Şeker</option><option value="butter">Tereyağı</option><option value="rice">Pirinç (çiğ)</option><option value="milk">Süt</option><option value="honey">Bal</option><option value="cocoa">Kakao</option><option value="oats">Yulaf ezmesi</option><option value="oil">Zeytinyağı</option><option value="chicken">Tavuk (çiğ)</option><option value="egg">Yumurta</option><option value="potato">Patates</option><option value="pasta">Makarna (çiğ)</option><option value="cheese">Rendelenmiş peynir</option><option value="cream">Sıvı krema</option><option value="yogurt">Yoğurt</option><option value="fish">Balık (fileto)</option><option value="lentils">Mercimek (pişmiş)</option></select>
+<div class="row"><div><label>Dönüşüm</label><select id="cv-mode"><option value="c2g">Bardak → gram</option><option value="g2c">Gram → bardak</option><option value="f2c">°F → °C</option><option value="c2f">°C → °F</option></select></div><div><label>Değer</label><input id="cv-val" type="number" value="1" step="any"></div></div>
+<button class="calc" id="calc-convert">Hesapla</button><div class="result" id="res-convert"></div></div>
+
+<div class="tool"><h3>Porsiyon Başına Kalori Hesaplayıcı</h3><p class="desc">Malzemelerinizi toplayın ve porsiyon başına kaloriyi öğrenin.</p>
+<label>Malzemeler</label><div class="row"><select id="cal-ing1"><option value="flour">Un</option><option value="sugar">Şeker</option><option value="butter">Tereyağı</option><option value="rice">Pirinç (çiğ)</option><option value="milk">Süt</option><option value="honey">Bal</option><option value="cocoa">Kakao</option><option value="oats">Yulaf ezmesi</option><option value="oil">Zeytinyağı</option><option value="chicken" selected>Tavuk (çiğ)</option><option value="egg">Yumurta</option><option value="potato">Patates</option><option value="pasta">Makarna (çiğ)</option><option value="cheese">Rendelenmiş peynir</option><option value="cream">Sıvı krema</option><option value="yogurt">Yoğurt</option><option value="fish">Balık (fileto)</option><option value="lentils">Mercimek (pişmiş)</option></select><input id="cal-g1" type="number" value="300" min="0" step="any" placeholder="Gram"></div><div class="row"><select id="cal-ing2"><option value="flour">Un</option><option value="sugar">Şeker</option><option value="butter">Tereyağı</option><option value="rice" selected>Pirinç (çiğ)</option><option value="milk">Süt</option><option value="honey">Bal</option><option value="cocoa">Kakao</option><option value="oats">Yulaf ezmesi</option><option value="oil">Zeytinyağı</option><option value="chicken">Tavuk (çiğ)</option><option value="egg">Yumurta</option><option value="potato">Patates</option><option value="pasta">Makarna (çiğ)</option><option value="cheese">Rendelenmiş peynir</option><option value="cream">Sıvı krema</option><option value="yogurt">Yoğurt</option><option value="fish">Balık (fileto)</option><option value="lentils">Mercimek (pişmiş)</option></select><input id="cal-g2" type="number" value="200" min="0" step="any" placeholder="Gram"></div><div class="row"><select id="cal-ing3"><option value="flour">Un</option><option value="sugar">Şeker</option><option value="butter">Tereyağı</option><option value="rice">Pirinç (çiğ)</option><option value="milk">Süt</option><option value="honey">Bal</option><option value="cocoa">Kakao</option><option value="oats">Yulaf ezmesi</option><option value="oil" selected>Zeytinyağı</option><option value="chicken">Tavuk (çiğ)</option><option value="egg">Yumurta</option><option value="potato">Patates</option><option value="pasta">Makarna (çiğ)</option><option value="cheese">Rendelenmiş peynir</option><option value="cream">Sıvı krema</option><option value="yogurt">Yoğurt</option><option value="fish">Balık (fileto)</option><option value="lentils">Mercimek (pişmiş)</option></select><input id="cal-g3" type="number" value="15" min="0" step="any" placeholder="Gram"></div><div class="row"><select id="cal-ing4"><option value="flour">Un</option><option value="sugar">Şeker</option><option value="butter">Tereyağı</option><option value="rice">Pirinç (çiğ)</option><option value="milk">Süt</option><option value="honey">Bal</option><option value="cocoa">Kakao</option><option value="oats">Yulaf ezmesi</option><option value="oil">Zeytinyağı</option><option value="chicken">Tavuk (çiğ)</option><option value="egg">Yumurta</option><option value="potato" selected>Patates</option><option value="pasta">Makarna (çiğ)</option><option value="cheese">Rendelenmiş peynir</option><option value="cream">Sıvı krema</option><option value="yogurt">Yoğurt</option><option value="fish">Balık (fileto)</option><option value="lentils">Mercimek (pişmiş)</option></select><input id="cal-g4" type="number" value="200" min="0" step="any" placeholder="Gram"></div>
+<label>Porsiyon sayısı</label><input id="cal-portions" type="number" value="2" min="1">
+<button class="calc" id="calc-cal">Hesapla</button><div class="result" id="res-cal"></div></div>
+
+<div class="tool"><h3>Malzeme İkame Bulucu</h3><p class="desc">Bir malzemeniz mi eksik? Yerine geçeni ve doğru ölçüyü bulun.</p>
+<label>Malzeme</label><select id="sub-ing"><option value="flour">Un</option><option value="sugar">Şeker</option><option value="butter" selected>Tereyağı</option><option value="rice">Pirinç (çiğ)</option><option value="milk">Süt</option><option value="honey">Bal</option><option value="cocoa">Kakao</option><option value="oats">Yulaf ezmesi</option><option value="oil">Zeytinyağı</option><option value="chicken">Tavuk (çiğ)</option><option value="egg">Yumurta</option><option value="potato">Patates</option><option value="pasta">Makarna (çiğ)</option><option value="cheese">Rendelenmiş peynir</option><option value="cream">Sıvı krema</option><option value="yogurt">Yoğurt</option><option value="fish">Balık (fileto)</option><option value="lentils">Mercimek (pişmiş)</option></select>
+<button class="calc" id="calc-sub">Hesapla</button><div class="result" id="res-sub"></div></div>
+
+<div class="tool"><h3>Yemek Planlayıcı ve Alışveriş Listesi</h3><p class="desc">Her gün için bir yemek seçin: alışveriş listesi kendiliğinden oluşur.</p>
+<label>Pazartesi</label><select id="plan-day1"><option value="">— Yemek seçin —</option><option value="tavuk">Otlu fırın tavuk</option><option value="makarna">Domatesli makarna</option><option value="corba">Sebze çorbası</option><option value="omlet">Mantarlı omlet</option><option value="pilav">Sebzeli pilav</option><option value="balik">Limonlu ızgara balık</option><option value="mercimek">Mercimek salatası</option></select><label>Salı</label><select id="plan-day2"><option value="">— Yemek seçin —</option><option value="tavuk">Otlu fırın tavuk</option><option value="makarna">Domatesli makarna</option><option value="corba">Sebze çorbası</option><option value="omlet">Mantarlı omlet</option><option value="pilav">Sebzeli pilav</option><option value="balik">Limonlu ızgara balık</option><option value="mercimek">Mercimek salatası</option></select><label>Çarşamba</label><select id="plan-day3"><option value="">— Yemek seçin —</option><option value="tavuk">Otlu fırın tavuk</option><option value="makarna">Domatesli makarna</option><option value="corba">Sebze çorbası</option><option value="omlet">Mantarlı omlet</option><option value="pilav">Sebzeli pilav</option><option value="balik">Limonlu ızgara balık</option><option value="mercimek">Mercimek salatası</option></select><label>Perşembe</label><select id="plan-day4"><option value="">— Yemek seçin —</option><option value="tavuk">Otlu fırın tavuk</option><option value="makarna">Domatesli makarna</option><option value="corba">Sebze çorbası</option><option value="omlet">Mantarlı omlet</option><option value="pilav">Sebzeli pilav</option><option value="balik">Limonlu ızgara balık</option><option value="mercimek">Mercimek salatası</option></select><label>Cuma</label><select id="plan-day5"><option value="">— Yemek seçin —</option><option value="tavuk">Otlu fırın tavuk</option><option value="makarna">Domatesli makarna</option><option value="corba">Sebze çorbası</option><option value="omlet">Mantarlı omlet</option><option value="pilav">Sebzeli pilav</option><option value="balik">Limonlu ızgara balık</option><option value="mercimek">Mercimek salatası</option></select><label>Cumartesi</label><select id="plan-day6"><option value="">— Yemek seçin —</option><option value="tavuk">Otlu fırın tavuk</option><option value="makarna">Domatesli makarna</option><option value="corba">Sebze çorbası</option><option value="omlet">Mantarlı omlet</option><option value="pilav">Sebzeli pilav</option><option value="balik">Limonlu ızgara balık</option><option value="mercimek">Mercimek salatası</option></select><label>Pazar</label><select id="plan-day7"><option value="">— Yemek seçin —</option><option value="tavuk">Otlu fırın tavuk</option><option value="makarna">Domatesli makarna</option><option value="corba">Sebze çorbası</option><option value="omlet">Mantarlı omlet</option><option value="pilav">Sebzeli pilav</option><option value="balik">Limonlu ızgara balık</option><option value="mercimek">Mercimek salatası</option></select>
+<button class="calc" id="calc-plan">Hesapla</button><div class="result" id="res-plan"></div></div>
+</div></div></section>
+<section id="tableau"><div class="wrap"><h2>Malzeme Dönüşüm Tablosu</h2><p class="sec-sub">Bir su bardağı her malzemede kaç gram eder? (1 su bardağı = 240 ml)</p>
+<div class="table-wrap"><table><thead><tr><th>Malzeme</th><th>1 su bardağı</th><th>Bilmekte fayda var</th></tr></thead><tbody><tr><td>Un</td><td>120 g</td><td>Kaşıkla doldurun, bastırmayın.</td></tr><tr><td>Toz şeker</td><td>200 g</td><td>Esmer şeker bir bardakta yaklaşık 220 g eder.</td></tr><tr><td>Tereyağı</td><td>227 g</td><td>250 g'lık bir kalıp ≈ 1 bardak + 1 yemek kaşığı.</td></tr><tr><td>Çiğ pirinç</td><td>185 g</td><td>Pirinç pişince hacmi neredeyse iki katına çıkar.</td></tr><tr><td>Süt</td><td>245 g</td><td>Su gibidir: 1 bardak ≈ 240 ml.</td></tr><tr><td>Bal</td><td>340 g</td><td>Bal yoğundur: ölçmek yerine tartmak daha doğrudur.</td></tr><tr><td>Kakao</td><td>100 g</td><td>Topaklanmayı önlemek için eleyin.</td></tr><tr><td>Yulaf ezmesi</td><td>90 g</td><td>Hafiftir: bir bardak 100 g'dan az gelir.</td></tr><tr><td>Zeytinyağı</td><td>216 g</td><td>1 bardak ≈ 240 ml.</td></tr><tr><td>Rendelenmiş peynir</td><td>110 g</td><td>Bastırmayın: hacim rende kalınlığına göre değişir.</td></tr></tbody></table></div></div></section>
+<section><div class="wrap"><h2>Fırın Sıcaklıkları</h2><p class="sec-sub">Santigrat, Fahrenheit ve fırın ayarı arasındaki dönüşüm.</p>
+<div class="table-wrap"><table><thead><tr><th>°C</th><th>°F</th><th>Ayar</th></tr></thead><tbody><tr><td>150 °C</td><td>300 °F</td><td>Düşük</td></tr><tr><td>160 °C</td><td>325 °F</td><td>Düşük–orta</td></tr><tr><td>180 °C</td><td>350 °F</td><td>Orta</td></tr><tr><td>200 °C</td><td>400 °F</td><td>Orta–sıcak</td></tr><tr><td>220 °C</td><td>425 °F</td><td>Sıcak</td></tr><tr><td>240 °C</td><td>475 °F</td><td>Çok sıcak</td></tr></tbody></table></div></div></section>
+<section id="guides"><div class="wrap"><h2>Mutfak Rehberleri</h2><p class="sec-sub">Her gün daha iyi pişirmek için sade öneriler.</p>
+<div class="guides-grid"><a class="guide-card" href="guides/hafta-ici-kolay-aksam-yemekleri.html"><h3>Hafta İçi 10 Kolay Akşam Yemeği</h3><p>Hafta içi akşamları için hızlı, dengeli ve stressiz on yemek fikri.</p></a><a class="guide-card" href="guides/her-tarifi-uyarlama.html"><h3>Her Tarifi Kendinize Göre Uyarlama</h3><p>Porsiyonu ikiye katlamak, malzeme değiştirmek, şekeri azaltmak: bilmeniz gereken kurallar.</p></a><a class="guide-card" href="guides/kiler-temelleri.html"><h3>Kilerin Temel Malzemeleri</h3><p>Markete koşmadan yemek pişirmek için evde her zaman bulunması gereken 25 malzeme.</p></a><a class="guide-card" href="guides/bicak-temelleri.html"><h3>Bıçak Kullanımının Temelleri</h3><p>Bıçak seçmek, tutmak ve bakımını yapmak: mutfağı daha güvenli ve hızlı kılan hareketler.</p></a><a class="guide-card" href="guides/yeni-baslayanlar-icin-meal-prep.html"><h3>Yeni Başlayanlar İçin Meal Prep</h3><p>Pazar günü iki saatte haftanın yemeklerini hazırlayın: adım adım yöntem.</p></a><a class="guide-card" href="guides/artanlari-guvenle-saklama.html"><h3>Artan Yemekleri Güvenle Saklama</h3><p>Soğutma, saklama, ısıtma: israfı önlemek için risksiz, sade kurallar.</p></a></div></div></section>
+<section class="faq"><div class="wrap"><h2>Sık Sorulan Sorular</h2><p class="sec-sub">En çok sorulan soruların yanıtları.</p><details><summary>Bir su bardağı un kaç gram eder?</summary><p>Bir Amerikan su bardağı (240 ml) un, kaşıkla doldurulup bastırılmadan yaklaşık 120 g eder. Bastırırsanız 140 g'a çıkabilir; hassas hamur işlerinde her zaman tartın.</p></details><details><summary>Tereyağı yerine sıvı yağ kullanabilir miyim?</summary><p>Çoğu kekte evet: 100 g tereyağı yerine 80 ml yağ kullanın. Ama kurabiye veya milföy gibi katı yağ gerektiren hamurlarda tereyağını koruyun; katı dokusu vazgeçilmezdir.</p></details><details><summary>Artan yemekler ne kadar dayanır?</summary><p>Kapalı bir kapta buzdolabında 3-4 gün saklayın. İç sıcaklığı 74 °C'ye ulaşana kadar ısıtın ve bir yemeği asla iki kez ısıtmayın.</p></details><details><summary>°F ile °C arasındaki fark nedir?</summary><p>Amerikan tarifleri Fahrenheit (°F), Türk ve Avrupa tarifleri Santigrat (°C) kullanır. 180 °C, 350 °F'ye karşılık gelir; kekler için en yaygın sıcaklıktır.</p></details><details><summary>Tartmak mı yoksa bardakla ölçmek mi daha iyi?</summary><p>Tartmak daha doğrudur; özellikle un ve şekerde. Bardak ölçüsü sıvılar ve günlük basit tarifler için yeterlidir.</p></details></div></section>
+<script>
+const DENS = {"flour": 120, "sugar": 200, "butter": 227, "rice": 185, "milk": 245, "honey": 340, "cocoa": 100, "oats": 90, "oil": 216, "chicken": 200, "egg": 200, "potato": 200, "pasta": 120, "cheese": 110, "cream": 240, "yogurt": 245, "fish": 200, "lentils": 190};      // grammes par tasse (240 ml)
+const KCAL = {"flour": 364, "sugar": 387, "butter": 717, "rice": 365, "milk": 42, "honey": 304, "cocoa": 228, "oats": 389, "oil": 884, "chicken": 165, "egg": 155, "potato": 77, "pasta": 371, "cheese": 402, "cream": 195, "yogurt": 59, "fish": 120, "lentils": 116};      // kcal pour 100 g
+const SUBS = {"butter": {"sub": "Sıvı yağ veya zeytinyağı", "ratio": "100 g tereyağı yerine 80 ml yağ", "note": "Yumuşak keklerde idealdir; kurabiye hamuru gibi katı yağ gerektiren tariflerde kullanmayın."}, "egg": {"sub": "Öğütülmüş keten tohumu + su", "ratio": "1 yemek kaşığı keten tohumu + 3 yemek kaşığı su = 1 yumurta (5 dakika bekletin)", "note": "Muffin ve keklerde işe yarar; omlette yumurtanın yerini tutmaz."}, "milk": {"sub": "Bitkisel süt (soya, yulaf, badem)", "ratio": "Aynı ölçüde, bire bir", "note": "Soya sütü, hamur işlerinde en yakın sonucu verir."}, "sugar": {"sub": "Bal", "ratio": "100 g şeker yerine 80 g bal; 2 yemek kaşığı sıvıyı azaltın", "note": "Bal daha çabuk kızarır: fırını 10 °C düşürün."}, "flour": {"sub": "Tam buğday unu", "ratio": "Aynı ölçüde; 1-2 yemek kaşığı su ekleyin", "note": "Hamur biraz daha yoğun olur; ekmek ve muffin için uygundur."}, "cream": {"sub": "Süzme yoğurt", "ratio": "Aynı ölçüde, bire bir", "note": "Kaynatmayın: yoğurdu ocaktan aldıktan sonra ekleyin, yoksa kesilir."}, "honey": {"sub": "Akçaağaç şurubu", "ratio": "Aynı ölçüde, bire bir", "note": "Tadı daha hafiftir; salata sosları ve marinelerde çok iyidir."}, "oil": {"sub": "Eritilmiş tereyağı", "ratio": "80 ml yağ yerine 100 g eritilmiş tereyağı", "note": "Daha zengin bir tat verir; yüksek sıcaklıkta kızartma için uygun değildir."}};      // ingrédient -> {sub, ratio, note}
+const DISHES = {"tavuk": [["chicken", 600, "g"], ["potato", 500, "g"], ["oil", 30, "ml"], ["butter", 20, "g"]], "makarna": [["pasta", 400, "g"], ["oil", 20, "ml"], ["cheese", 80, "g"], ["butter", 10, "g"]], "corba": [["potato", 400, "g"], ["milk", 200, "ml"], ["butter", 20, "g"], ["cream", 100, "ml"]], "omlet": [["egg", 6, "adet"], ["cheese", 60, "g"], ["butter", 15, "g"], ["milk", 50, "ml"]], "pilav": [["rice", 300, "g"], ["oil", 25, "ml"], ["egg", 2, "adet"], ["honey", 10, "g"]], "balik": [["fish", 500, "g"], ["oil", 20, "ml"], ["butter", 15, "g"], ["rice", 200, "g"]], "mercimek": [["lentils", 250, "g"], ["oil", 30, "ml"], ["potato", 200, "g"], ["yogurt", 100, "g"]]};  // plat -> [[ingrédient, qty, unité], ...]
+const T = {"decimal": ",", "ingredient": "Malzeme", "quantity": "Miktar", "grams": "Gram", "tools_title": "Mutfak Araçları", "tools_sub": "Kayıt olmadan kullanabileceğiniz beş ücretsiz araç.", "tool1": "Tarif Ölçekleyici", "tool1_desc": "Porsiyon sayısını değiştirin: miktarlar otomatik olarak yeniden hesaplanır.", "orig_serv": "Orijinal porsiyon", "new_serv": "İstenen porsiyon", "ingredients": "Malzemeler", "tool2": "Birim Dönüştürücü", "tool2_desc": "Su bardağını grama, gramı su bardağına ve °F'yi °C'ye çevirin.", "conversion": "Dönüşüm", "c2g": "Bardak → gram", "g2c": "Gram → bardak", "f2c": "°F → °C", "c2f": "°C → °F", "value": "Değer", "cups": "su bardağı", "tool3": "Porsiyon Başına Kalori Hesaplayıcı", "tool3_desc": "Malzemelerinizi toplayın ve porsiyon başına kaloriyi öğrenin.", "portions": "Porsiyon sayısı", "tool4": "Malzeme İkame Bulucu", "tool4_desc": "Bir malzemeniz mi eksik? Yerine geçeni ve doğru ölçüyü bulun.", "tool5": "Yemek Planlayıcı ve Alışveriş Listesi", "tool5_desc": "Her gün için bir yemek seçin: alışveriş listesi kendiliğinden oluşur.", "choose_dish": "— Yemek seçin —", "listTitle": "Alışveriş listeniz:", "calculate": "Hesapla", "invalid": "Lütfen değerlerinizi kontrol edip tekrar deneyin.", "scaleResult": "Ölçek katsayısı: ×{f}. Yeni miktarlar:", "calResult": "Toplam: {t} kcal — porsiyon başına {p} kcal.", "table_title": "Malzeme Dönüşüm Tablosu", "table_sub": "Bir su bardağı her malzemede kaç gram eder? (1 su bardağı = 240 ml)", "th_ing": "Malzeme", "th_cup": "1 su bardağı", "th_note": "Bilmekte fayda var", "oven_title": "Fırın Sıcaklıkları", "oven_sub": "Santigrat, Fahrenheit ve fırın ayarı arasındaki dönüşüm.", "th_c": "°C", "th_f": "°F", "th_gas": "Ayar", "guides_title": "Mutfak Rehberleri", "guides_sub": "Her gün daha iyi pişirmek için sade öneriler.", "faq_title": "Sık Sorulan Sorular", "faq_sub": "En çok sorulan soruların yanıtları.", "back_home": "Ana sayfaya dön"};
+
+function scaleQty(q, fromServ, toServ){ return q * toServ / fromServ; }
+function cupsToGrams(cups, ing){ return cups * DENS[ing]; }
+function gramsToCups(g, ing){ return g / DENS[ing]; }
+function fToC(f){ return (f - 32) * 5 / 9; }
+function cToF(c){ return c * 9 / 5 + 32; }
+function caloriesFor(rows, portions){
+  let total = 0;
+  rows.forEach(function(r){ total += r[1] / 100 * KCAL[r[0]]; });
+  return total / portions;
+}
+function getSub(ing){ return SUBS[ing] || null; }
+function aggregateList(dishKeys){
+  const out = {};
+  dishKeys.forEach(function(k){
+    (DISHES[k] || []).forEach(function(it){
+      const key = it[0] + "||" + it[2];
+      if(!out[key]) out[key] = {ing: it[0], qty: 0, unit: it[2]};
+      out[key].qty += it[1];
+    });
+  });
+  return Object.keys(out).map(function(k){ return out[k]; });
+}
+function fmt(n){ return (Math.round(n * 100) / 100).toString().replace(".", T.decimal); }
+
+if (typeof document !== "undefined") {
+  function show(id, html){ const el = document.getElementById(id); el.innerHTML = html; el.classList.add("show"); }
+  function val(id){ return parseFloat(document.getElementById(id).value); }
+  function opt(id){ return document.getElementById(id).value; }
+
+  document.getElementById("calc-scale").addEventListener("click", function(){
+    const from = val("sc-from"), to = val("sc-to");
+    if(!from || !to || from <= 0 || to <= 0){ show("res-scale", T.invalid); return; }
+    let lines = [];
+    for(let i = 1; i <= 4; i++){
+      const name = document.getElementById("sc-name" + i).value.trim();
+      const q = parseFloat(document.getElementById("sc-qty" + i).value);
+      const unit = document.getElementById("sc-unit" + i).value;
+      if(name && !isNaN(q)) lines.push("<b>" + fmt(scaleQty(q, from, to)) + " " + unit + "</b> " + name);
+    }
+    show("res-scale", lines.length ? T.scaleResult.replace("{f}", fmt(to / from)) + "<br>" + lines.join("<br>") : T.invalid);
+  });
+
+  document.getElementById("calc-convert").addEventListener("click", function(){
+    const mode = opt("cv-mode"), ing = opt("cv-ing"), v = val("cv-val");
+    if(isNaN(v)){ show("res-convert", T.invalid); return; }
+    let out;
+    if(mode === "c2g") out = fmt(cupsToGrams(v, ing)) + " g";
+    else if(mode === "g2c") out = fmt(gramsToCups(v, ing)) + " " + T.cups;
+    else if(mode === "f2c") out = fmt(fToC(v)) + " °C";
+    else out = fmt(cToF(v)) + " °F";
+    show("res-convert", "<b>" + out + "</b>");
+  });
+
+  document.getElementById("calc-cal").addEventListener("click", function(){
+    const portions = val("cal-portions");
+    if(!portions || portions <= 0){ show("res-cal", T.invalid); return; }
+    let rows = [], total = 0;
+    for(let i = 1; i <= 4; i++){
+      const ing = opt("cal-ing" + i), g = parseFloat(document.getElementById("cal-g" + i).value);
+      if(!isNaN(g) && g > 0){ rows.push([ing, g]); total += g / 100 * KCAL[ing]; }
+    }
+    if(!rows.length){ show("res-cal", T.invalid); return; }
+    show("res-cal", T.calResult.replace("{t}", fmt(total)).replace("{p}", fmt(total / portions)));
+  });
+
+  document.getElementById("calc-sub").addEventListener("click", function(){
+    const s = getSub(opt("sub-ing"));
+    show("res-sub", s ? "<b>" + s.sub + "</b> — " + s.ratio + "<br>" + s.note : T.invalid);
+  });
+
+  document.getElementById("calc-plan").addEventListener("click", function(){
+    const keys = [];
+    for(let i = 1; i <= 7; i++){ const k = opt("plan-day" + i); if(k) keys.push(k); }
+    if(!keys.length){ show("res-plan", T.invalid); return; }
+    const list = aggregateList(keys);
+    show("res-plan", "<b>" + T.listTitle + "</b><br>" + list.map(function(it){ return "• " + fmt(it.qty) + " " + it.unit + " " + it.ing; }).join("<br>"));
+  });
+}
+</script>
+<footer><div class="wrap"><h4>Hakkında</h4><p>Kolay Tarifler, günlük yemekleri kolaylaştıran ücretsiz bir sitedir: pratik araçlar, güvenilir dönüşüm tabloları ve anlaşılır rehberler. Kayıt gerekmez, hesap gerekmez.</p><h4>Uyarı</h4><p>Besin değerleri ve dönüşümler ortalama tahmini değerlerdir; yalnızca bilgilendirme amaçlıdır. Bir beslenme veya sağlık uzmanının tavsiyesinin yerini tutmaz. Alerjenleri her zaman kontrol edin ve tarifleri kendi ihtiyaçlarınıza göre uyarlayın.</p><p>&copy; 2026 Kolay Tarifler. Tüm hakları saklıdır.</p></div></footer>
+</body>
+</html>
